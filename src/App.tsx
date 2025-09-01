@@ -1,7 +1,12 @@
+import { Heading } from "./components/Heading";
+
+import "./styles/theme.css";
+import "./styles/global.css";
+
 const App = () => {
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <Heading>Hello World</Heading>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero neque
         natus earum a. Iusto minima architecto eos, velit itaque incidunt
