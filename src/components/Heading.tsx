@@ -1,9 +1,10 @@
-import ClassesOfHeadingModules from "./Heading.module.css";
+import type React from "react";
+import styles from "./Heading.module.css";
 
 interface HeadingProps {
-  children: string;
+  children: React.ReactNode;
 }
 
 export const Heading = ({ children }: HeadingProps) => {
-  return <h1 className={ClassesOfHeadingModules.heading}>{children}</h1>;
+  return <h1 className={styles.heading}>{children}</h1>;
 };
