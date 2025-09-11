@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import styles from "./Container.module.css";
+import styles from "./styles.module.css";
 
 interface ContainerProp {
   children: ReactNode;

@@ -1,5 +1,5 @@
 import type React from "react";
-import styles from "./MyHeading.module.css";
+import styles from "./styles.module.css";
 
 interface MyHeadingProps {
   children: React.ReactNode;
