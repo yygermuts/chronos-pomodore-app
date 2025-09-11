@@ -1,5 +1,6 @@
 {
   "files.eol": "\n",
+  "workbench.editor.labelFormat": "short",
 
   // 🛠 Formatação e Lint
   "editor.defaultFormatter": "esbenp.prettier-vscode",

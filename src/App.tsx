@@ -1,14 +1,23 @@
 import "./styles/theme.css";
 import "./styles/global.css";
-import { ContainerComponent } from "./components/ContainerComponent";
+import { Container } from "./components/Container";
+import { MyHeading } from "./components/MyHeading";
 
 const App = () => {
   return (
     <>
-      <ContainerComponent>LOGO</ContainerComponent>
-      <ContainerComponent>MENU</ContainerComponent>
-      <ContainerComponent>FORM</ContainerComponent>
-      <ContainerComponent>FOOTER</ContainerComponent>
+      <Container>
+        <MyHeading>LOGO</MyHeading>
+      </Container>
+      <Container>
+        <MyHeading>MENU</MyHeading>
+      </Container>
+      <Container>
+        <MyHeading>FORM</MyHeading>
+      </Container>
+      <Container>
+        <MyHeading>FOOTER</MyHeading>
+      </Container>
     </>
   );
 };
