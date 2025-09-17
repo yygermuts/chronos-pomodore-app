@@ -2,8 +2,8 @@ import "./styles/theme.css";
 import "./styles/global.css";
 
 import { Container } from "./components/Container";
-import { MyHeading } from "./components/MyHeading";
 import { Logo } from "./components/Logo";
+import { Menu } from "./components/Menu";
 
 const App = () => {
   return (
@@ -12,13 +12,7 @@ const App = () => {
         <Logo />
       </Container>
       <Container>
-        <MyHeading>MENU</MyHeading>
-      </Container>
-      <Container>
-        <MyHeading>FORM</MyHeading>
-      </Container>
-      <Container>
-        <MyHeading>FOOTER</MyHeading>
+        <Menu />
       </Container>
     </>
   );
