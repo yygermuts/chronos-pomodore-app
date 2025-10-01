@@ -21,7 +21,7 @@ const App = () => {
       </Container>
       <Container>
         <form className="form" action="">
-          <DefaultInput type="" />
+          <DefaultInput labelText="Task" abc={123} id="string" type="" />
 
           <div className="formRow">
             <p>Lorem ipsum dolor sit amet.</p>

@@ -1,12 +1,24 @@
-export interface DefaultInputProps {
-  type: string;
+// type DefaultInputProps = {
+//   id: "string";
+//   abc: number;
+// } & React.ComponentProps<"input">;
+
+interface DefaultInputProps extends React.ComponentProps<"input"> {
+  id: string;
+  abc: number;
+  labelText: string;
 }
 
-export const DefaultInput = ({ type }: DefaultInputProps) => {
+export const DefaultInput = ({
+  id,
+  type,
+  labelText,
+  ...rest
+}: DefaultInputProps) => {
   return (
     <>
-      <label htmlFor="myInput">task</label>
-      <input id="myInput" type={type} />
+      <label htmlFor={id}>{labelText}</label>
+      <input id={id} type={type} {...rest} />
     </>
   );
 };
