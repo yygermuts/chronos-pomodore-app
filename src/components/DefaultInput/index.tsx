@@ -3,6 +3,8 @@
 //   abc: number;
 // } & React.ComponentProps<"input">;
 
+import styles from "./styles.module.css";
+
 interface DefaultInputProps extends React.ComponentProps<"input"> {
   id: string;
   abc: number;
@@ -18,7 +20,7 @@ export const DefaultInput = ({
   return (
     <>
       <label htmlFor={id}>{labelText}</label>
-      <input id={id} type={type} {...rest} />
+      <input className={styles.input} id={id} type={type} {...rest} />
     </>
   );
 };
