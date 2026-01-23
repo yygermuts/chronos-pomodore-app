@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 export const Cycles = () => {
   return (
     <div className={styles.cycles}>
-      <span>Ciclos</span>
+      <span>Ciclos Pomodoro</span>
       <div className={styles.cycleDots}>
         <span className={`${styles.cycleDot} ${styles.workTime}`}></span>
         <span className={`${styles.cycleDot} ${styles.shortBreakTime}`}></span>
