@@ -1,4 +1,10 @@
-import { HistoryIcon, HouseIcon, SettingsIcon, SunIcon } from "lucide-react";
+import {
+  HistoryIcon,
+  HouseIcon,
+  MoonIcon,
+  SettingsIcon,
+  SunIcon,
+} from "lucide-react";
 import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
 import "../../styles/theme.css";
@@ -6,7 +12,15 @@ import "../../styles/theme.css";
 type AvailableThemes = "dark" | "light";
 
 export const Menu = () => {
-  const [theme, setTheme] = useState<AvailableThemes>("dark");
+  const [theme, setTheme] = useState<AvailableThemes>(() => {
+    const storageThemes = localStorage.getItem("theme") as AvailableThemes;
+    return storageThemes === "dark" ? "dark" : "light";
+  });
+
+  const nextThemeIcon = {
+    dark: <SunIcon />,
+    light: <MoonIcon />,
+  };
 
   const handleThemeChange = (
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
@@ -20,23 +34,16 @@ export const Menu = () => {
     });
   };
 
-  // useEffect(() => {
-  //   console.log("useEffect sem dependencia", Date.now());
-  // }); //executado toda vez que o componente renderiza na tela
-
-  // useEffect(() => {
-  //   console.log("useEffect com array dep vazio", Date.now());
-  // }, []); // esse useEffect executa apenas quando
-  // // o react monta o componente na tela pela primeira vez
-
   useEffect(() => {
-    console.log("theme mudou", theme, Date.now());
     document.documentElement.setAttribute("data-theme", theme);
+
+    localStorage.setItem("theme", theme);
+
+    return () => {}; //função cleanup
   }, [theme]); // executa apenas quando o valor de theme muda
 
   return (
     <nav className={styles.menu}>
-      <h1>{theme}</h1>
       <a
         className={styles.menuLink}
         href="#"
@@ -68,7 +75,7 @@ export const Menu = () => {
         title="Mudar tema"
         onClick={handleThemeChange}
       >
-        <SunIcon />
+        {nextThemeIcon[theme]}
       </a>
     </nav>
   );
