@@ -1,0 +1,10 @@
+import type React from "react";
+import styles from "./syles.module.css";
+
+type GenericHtmlProps = {
+  children: React.ReactNode;
+};
+
+export const GenericHTML = ({ children }: GenericHtmlProps) => {
+  return <div className={styles.genericHtml}>{children}</div>;
+};
